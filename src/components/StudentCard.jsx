@@ -44,35 +44,6 @@ const StudentCard = ({ student }) => {
                 <Button props={{ id: student.id, type: 'update' }} />
             </form>
         </li>
-
-        // <li className="inactive">
-        //     <div>
-        //         <strong>Marco</strong> - Storia
-        //         <span className={student.studentStatus}>(inattivo)</span>
-        //     </div>
-        //     <div className="actions">
-        //         <Button props={{ id: 1, type: 'edit' }} />
-        //         <Button props={{ id: 1, type: 'delete' }} />
-        //     </div>
-        //     <form className="edit-form">
-        //         <label>
-        //             Nome:
-        //             <input type="text" name="name" value="Marco" />
-        //         </label>
-        //         <label>
-        //             Corso:
-        //             <input type="text" name="course" value="Storia" />
-        //         </label>
-        //         <label>
-        //             Stato:
-        //             <select name={student.studentStatus}>
-        //                 <option value="active">Attivo</option>
-        //                 <option value="inactive" selected>Inattivo</option>
-        //             </select>
-        //         </label>
-        //         <Button props={{ id: 1, type: 'update' }} />
-        //     </form>
-        // </li>
     )
 }
 
