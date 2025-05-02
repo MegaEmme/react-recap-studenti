@@ -13,7 +13,10 @@ const Button = ({ props }) => {
     } else if (props.type === "delete") {
         className = "delete-btn"
         text = "Elimina"
-    };
+    } else if (props.type === "update") {
+        type = "submit"
+        text = "Salva Modifiche"
+    }
 
     return (
         <button className={className} type={type}>{text}</button>

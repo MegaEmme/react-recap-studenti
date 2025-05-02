@@ -1,4 +1,5 @@
-import Button from "./Button";
+
+import StudentCard from "./StudentCard";
 
 const StudentList = () => {
     return (
@@ -14,68 +15,7 @@ const StudentList = () => {
                 </div>
             </div>
             <ul id="student-list">
-                <li>
-                    <div>
-                        <strong>Giulia</strong> - Matematica
-                        <span className="status">(attivo)</span>
-                    </div>
-                    <div className="actions">
-                        {/* <button className="edit-btn">Modifica</button>
-                        <button className="delete-btn">Elimina</button> */}
-                        <Button props={{ id: 1, type: 'edit' }} />
-                        <Button props={{ id: 1, type: 'delete' }} />
-                    </div>
-                    <form className="edit-form">
-                        <label>
-                            Nome:
-                            <input type="text" name="name" value="Giulia" />
-                        </label>
-                        <label>
-                            Corso:
-                            <input type="text" name="course" value="Matematica" />
-                        </label>
-                        <label>
-                            Stato:
-                            <select name="status">
-                                <option value="active" selected>Attivo</option>
-                                <option value="inactive">Inattivo</option>
-                            </select>
-                        </label>
-                        {/* <button type="submit">Salva modifiche</button> */}
-                        <Button props={{ id: 1, type: 'submit' }} />
-                    </form>
-                </li>
-
-                <li className="inactive">
-                    <div>
-                        <strong>Marco</strong> - Storia
-                        <span className="status">(inattivo)</span>
-                    </div>
-                    <div className="actions">
-                        {/* <button className="edit-btn">Modifica</button>
-                        <button className="delete-btn">Elimina</button> */}
-                        <Button props={{ id: 1, type: 'edit' }} />
-                        <Button props={{ id: 1, type: 'delete' }} />
-                    </div>
-                    <form className="edit-form">
-                        <label>
-                            Nome:
-                            <input type="text" name="name" value="Marco" />
-                        </label>
-                        <label>
-                            Corso:
-                            <input type="text" name="course" value="Storia" />
-                        </label>
-                        <label>
-                            Stato:
-                            <select name="status">
-                                <option value="active">Attivo</option>
-                                <option value="inactive" selected>Inattivo</option>
-                            </select>
-                        </label>
-                        <button type="submit">Salva modifiche</button>
-                    </form>
-                </li>
+                <StudentCard student={{ id: 1, name: "giulia", course: "matematica", status: 'active' }} />
             </ul>
         </section>
     )

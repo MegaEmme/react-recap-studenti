@@ -22,7 +22,6 @@ const StudentForm = () => {
                         <option value="inactive">Inattivo</option>
                     </select>
                 </label>
-                {/* <button type="submit">Aggiungi</button> */}
                 <Button props={{ id: 1, type: 'submit' }} />
             </form>
         </section>
