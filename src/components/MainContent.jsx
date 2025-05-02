@@ -5,7 +5,7 @@ import StudentList from "./StudentList";
 
 const MainContent = () => {
     return (
-        <main class="container">
+        <main className="container">
             <StatusMessage />
             <StudentForm />
             <StudentFilter />

@@ -1,4 +1,7 @@
+import Button from "./Button";
+
 const StudentForm = () => {
+
     return (
 
         <section className="form-section">
@@ -19,7 +22,8 @@ const StudentForm = () => {
                         <option value="inactive">Inattivo</option>
                     </select>
                 </label>
-                <button type="submit">Aggiungi</button>
+                {/* <button type="submit">Aggiungi</button> */}
+                <Button props={{ id: 1, type: 'submit' }} />
             </form>
         </section>
     )

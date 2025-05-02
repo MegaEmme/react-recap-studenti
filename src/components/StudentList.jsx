@@ -1,3 +1,5 @@
+import Button from "./Button";
+
 const StudentList = () => {
     return (
         <section className="list-section">
@@ -18,8 +20,10 @@ const StudentList = () => {
                         <span className="status">(attivo)</span>
                     </div>
                     <div className="actions">
-                        <button className="edit-btn">Modifica</button>
-                        <button className="delete-btn">Elimina</button>
+                        {/* <button className="edit-btn">Modifica</button>
+                        <button className="delete-btn">Elimina</button> */}
+                        <Button props={{ id: 1, type: 'edit' }} />
+                        <Button props={{ id: 1, type: 'delete' }} />
                     </div>
                     <form className="edit-form">
                         <label>
@@ -37,7 +41,8 @@ const StudentList = () => {
                                 <option value="inactive">Inattivo</option>
                             </select>
                         </label>
-                        <button type="submit">Salva modifiche</button>
+                        {/* <button type="submit">Salva modifiche</button> */}
+                        <Button props={{ id: 1, type: 'submit' }} />
                     </form>
                 </li>
 
@@ -47,8 +52,10 @@ const StudentList = () => {
                         <span className="status">(inattivo)</span>
                     </div>
                     <div className="actions">
-                        <button className="edit-btn">Modifica</button>
-                        <button className="delete-btn">Elimina</button>
+                        {/* <button className="edit-btn">Modifica</button>
+                        <button className="delete-btn">Elimina</button> */}
+                        <Button props={{ id: 1, type: 'edit' }} />
+                        <Button props={{ id: 1, type: 'delete' }} />
                     </div>
                     <form className="edit-form">
                         <label>
