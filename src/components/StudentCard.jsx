@@ -1,13 +1,27 @@
 import Button from "./Button";
+import { useState, useEffect } from "react";
+
 
 const StudentCard = ({ student }) => {
+    const [statusText, setStatusText] = useState("")
+
+    useEffect(() => {
+
+        console.log("sono " + student.name + " e sono " + student.studentStatus)
+        if (student.studentStatus == "active") {
+            setStatusText("attivo")
+        } else {
+            setStatusText("inattivo")
+        }
+    }, [])
+
     return (
-        <li>
+        <li className={student.studentStatus}>
             <div>
                 <strong>{student.name}</strong> - {student.course}
-                <span className={student.status}>(attivo)</span>
+                <span className={student.studentStatus}>{statusText}</span>
             </div>
-            <div className="actions">
+            <div className={student.studentStatus}>
                 <Button props={{ id: student.id, type: 'edit' }} />
                 <Button props={{ id: student.id, type: 'delete' }} />
             </div>
@@ -22,8 +36,8 @@ const StudentCard = ({ student }) => {
                 </label>
                 <label>
                     Stato:
-                    <select name={student.status}>
-                        <option value="active" selected>Attivo</option>
+                    <select name={student.studentStatus}>
+                        <option value="active" >Attivo</option>
                         <option value="inactive">Inattivo</option>
                     </select>
                 </label>
@@ -34,7 +48,7 @@ const StudentCard = ({ student }) => {
         // <li className="inactive">
         //     <div>
         //         <strong>Marco</strong> - Storia
-        //         <span className={student.status}>(inattivo)</span>
+        //         <span className={student.studentStatus}>(inattivo)</span>
         //     </div>
         //     <div className="actions">
         //         <Button props={{ id: 1, type: 'edit' }} />
@@ -51,7 +65,7 @@ const StudentCard = ({ student }) => {
         //         </label>
         //         <label>
         //             Stato:
-        //             <select name={student.status}>
+        //             <select name={student.studentStatus}>
         //                 <option value="active">Attivo</option>
         //                 <option value="inactive" selected>Inattivo</option>
         //             </select>

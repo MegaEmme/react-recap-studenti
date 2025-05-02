@@ -1,7 +1,10 @@
 
 import StudentCard from "./StudentCard";
 
-const StudentList = () => {
+const StudentList = ({ students }) => {
+
+
+
     return (
         <section className="list-section">
             <div className="list-header">
@@ -15,7 +18,7 @@ const StudentList = () => {
                 </div>
             </div>
             <ul id="student-list">
-                <StudentCard student={{ id: 1, name: "giulia", course: "matematica", status: 'active' }} />
+                {students && students.map((elem) => (<StudentCard student={elem} key={elem.id} />))}
             </ul>
         </section>
     )
