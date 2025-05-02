@@ -1,6 +1,6 @@
 const StatusMessage = () => {
     return (
-        <div id="status-message" class="status-message"></div>
+        <div id="status-message" className="status-message"></div>
     )
 };
 
