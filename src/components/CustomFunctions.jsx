@@ -1,5 +1,5 @@
 function GetRandomElement(array) {
-    let value = Math.floor(Math.random() * array.length)
+    let value = Math.floor(Math.random() * array.length);
     return array[value]
 }
 

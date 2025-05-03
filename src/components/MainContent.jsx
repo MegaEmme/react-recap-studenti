@@ -15,7 +15,17 @@ const MainContent = () => {
 
     useEffect(() => {
         axios.get(endpoint).then((response) => {
-            setStudents(response.data.map((elem) => ({ id: elem.id, name: elem.name, course: GetRandomElement(courses), status: GetRandomElement(["active", "inactive"]) })))
+            setStudents(response.data.map((elem) => (
+                {
+                    id: elem.id,
+                    name: elem.name,
+                    course: GetRandomElement(courses),
+                    status: GetRandomElement(["active", "inactive"])
+                }
+            ))
+            )
+        }).catch((error) => {
+            console.error("Errore chiamata axios:", error);
         })
     }, [])
 
