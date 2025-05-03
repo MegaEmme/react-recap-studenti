@@ -3,4 +3,7 @@ function GetRandomElement(array) {
     return array[value]
 }
 
-export default GetRandomElement
+
+
+
+export default GetRandomElement;

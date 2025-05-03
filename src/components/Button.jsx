@@ -1,25 +1,30 @@
+import { useState, useEffect } from "react";
+
 const Button = ({ props }) => {
 
-    let className = null;
-    let type = null;
-    let text = null;
+    const [className, setClassName] = useState("");
+    const [text, setText] = useState("");
+    const [type, setType] = useState("");
 
-    if (props.type === "submit") {
-        type = "submit"
-        text = "Aggiungi"
-    } else if (props.type === "edit") {
-        className = "edit-btn"
-        text = "Modifica"
-    } else if (props.type === "delete") {
-        className = "delete-btn"
-        text = "Elimina"
-    } else if (props.type === "update") {
-        type = "submit"
-        text = "Salva Modifiche"
-    }
+    useEffect(() => {
+        if (props.type === "submit") {
+            setType("submit");
+            setText("Aggiungi")
+        } else if (props.type === "edit") {
+            setClassName("edit-btn");
+            setText("Modifica")
+        } else if (props.type === "delete") {
+            setClassName("delete-btn")
+            setText("Elimina")
+        } else if (props.type === "update") {
+            setType("submit")
+            setText("Salva Modifiche")
+        }
+    }, [props])
 
     return (
-        <button className={className} type={type}>{text}</button>
+        <button className={className} type={type} >{text}</button>
+
     )
 };
 

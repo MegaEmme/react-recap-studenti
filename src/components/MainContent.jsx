@@ -12,6 +12,9 @@ const MainContent = () => {
 
     const endpoint = "https://jsonplaceholder.typicode.com/users"
     const [students, setStudents] = useState([]);
+    const handleFormSubmit = (formData) => {
+        setStudents((prevStudents) => [...prevStudents, formData]);
+    }
 
     useEffect(() => {
         axios.get(endpoint).then((response) => {
@@ -32,7 +35,7 @@ const MainContent = () => {
     return (
         <main className="container">
             <StatusMessage />
-            <StudentForm />
+            <StudentForm students={students} onFormSubmit={handleFormSubmit} />
             <StudentFilter />
             <StudentList students={students} />
         </main>
