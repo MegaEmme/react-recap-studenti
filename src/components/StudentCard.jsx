@@ -6,22 +6,20 @@ const StudentCard = ({ student }) => {
     const [statusText, setStatusText] = useState("")
 
     useEffect(() => {
-
-        console.log("sono " + student.name + " e sono " + student.studentStatus)
-        if (student.studentStatus == "active") {
+        if (student.status == "active") {
             setStatusText("attivo")
         } else {
             setStatusText("inattivo")
         }
-    }, [])
+    }, [student.status])
 
     return (
-        <li className={student.studentStatus}>
+        <li className={student.status}>
             <div>
                 <strong>{student.name}</strong> - {student.course}
-                <span className={student.studentStatus}>{statusText}</span>
+                <span className={student.status}>{statusText}</span>
             </div>
-            <div className={student.studentStatus}>
+            <div className={student.status}>
                 <Button props={{ id: student.id, type: 'edit' }} />
                 <Button props={{ id: student.id, type: 'delete' }} />
             </div>
@@ -36,7 +34,7 @@ const StudentCard = ({ student }) => {
                 </label>
                 <label>
                     Stato:
-                    <select name={student.studentStatus}>
+                    <select name={student.status}>
                         <option value="active" >Attivo</option>
                         <option value="inactive">Inattivo</option>
                     </select>

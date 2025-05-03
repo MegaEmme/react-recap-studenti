@@ -1,9 +1,6 @@
-
 import StudentCard from "./StudentCard";
 
 const StudentList = ({ students }) => {
-
-
 
     return (
         <section className="list-section">
